@@ -1,0 +1,41 @@
+<section class="about">
+
+  <img src='{{section.settings.about_image | img_url}}' alt={{section.settings.about_image.alt}}>
+
+  <div>
+     <h2>{{section.settings.about_title}}</h2>
+     <p>{{section.settings.about_content }}</p>
+  </div>
+</section>
+
+
+
+{% schema %}
+{
+  "name": "about",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "about_image",
+      "label": "About Image"
+    },
+    {
+      "type": "text",
+      "id":"about_text",
+      "label":"About Text"
+    },
+    {
+      "type":"textarea",
+      "id": "about_content",
+      "label": "About Content"
+    }
+  ],
+  "presets": [
+    {
+      "name": "About Us",
+      "category": "About"
+    }
+  ]
+}
+
+{% endschema %}

@@ -1,0 +1,20 @@
+<section>
+  <div>
+    {{ section.settings.map }}
+  </div>
+</section>
+
+{% schema %}
+
+  {
+    "name": "Map",
+    "settings": [
+      {
+      "type": "html",
+      "id": "map",
+      "label": "Map Embed" 
+      }
+    ]
+  }
+
+{% endschema %}
