@@ -8,16 +8,20 @@
 {%- endcomment -%}
 {%- assign collection = collections[section.settings.collection] -%}
 
-<section class="featured-collection" style="background-image: url({{collection.image |img_url: '1400x'}})">
+<section class="featured-collection">
+  <div class="container wrapper">
+    <div class="bkgrd-left"></div>
+    <div class="bkgrd-right"></div>
+    <div class="collection-info" style="background-image: url({{collection.image |img_url: '1000x'}})">
+      {% if section.settings.title != blank %}
+        <h2 class="featured-collection__title">{{ section.settings.title | escape }}</h2>
+      {% endif %}
 
-  {% if section.settings.title != blank %}
-    <h2 class="featured-collection__title">{{ section.settings.title | escape }}</h2>
-  {% endif %}
-
-  {% if section.settings.link != blank %}
-  <a href="{{section.settings.link}}">{{section.settings.link_text}}</a>
-  {% endif %}
-
+      {% if section.settings.link != blank %}
+      <a class="btn" href="{{section.settings.link}}">{{section.settings.link_text}}</a>
+      {% endif %}
+    </div>
+  </div>
 </section>
 
 

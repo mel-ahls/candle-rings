@@ -1,59 +1,54 @@
 <footer>
-    {%- assign footer_linklist = section.settings.footer_linklist -%}
-    {% if linklists[footer_linklist].links.size > 0 %}
-      <ul>
-        {% for link in linklists[footer_linklist].links %}
-          <li><a href="{{ link.url }}">{{ link.title }}</a></li>
-        {% endfor %}
-      </ul>
-    {% endif %}
-
+  <div>
     <img src="{{ section.settings.footer_logo | img_url: 'small' }}" alt="{{ section.settings.footer_logo.alt }}">
+    <p>{{ section.settings.footer_text }}</p>
+  </div>
 
-    <h2>{{ section.settings.just_practicing }}</h2>
-
+  <div class="social-links">
     {% for block in section.blocks %}
-      <h3>{{ block.settings.textarea_block }}</h3>
+      {% if block.type == "text" %}
+        <a href="{{block.settings.social_link}}">{{block.settings.social_icon}}</a>
+      {% endif %}
     {% endfor %}
+  </div>
 
-  </footer>
+</footer>
   
-  {% schema %}
-    {
-      "name": "Footer",
-      "settings": [
-        {
-          "type": "link_list",
-          "id": "footer_linklist",
-          "label": "First menu",
-          "default": "footer"
-        },
+{% schema %}
+  {
+    "name": "Footer",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "footer_logo",
+        "label": "Footer Logo Image"
+      },
 
-        {
-          "type": "image_picker",
-          "id": "footer_logo",
-          "label": "Footer Logo Image"
-        },
+      {
+        "type": "text",
+        "id": "footer_text",
+        "label": "Footer Text"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "text",
+        "name": "Social Links",
+        "settings": [
+          {
+            "type": "text",
+            "id": "social_icon",
+            "label": "Social Icon"
+          },
+          {
+            "type": "url",
+            "id": "social_link",
+            "label": "Social Link"
+          }
 
-        {
-          "type": "text",
-          "id": "just_practicing",
-          "label": "fun fun fun"
-        }
-      ],
-      "blocks": [
-        {
-          "type": "text",
-          "name": "block_text",
-          "settings": [
-            {
-              "type": "textarea",
-              "id": "textarea_block",
-              "label": "Text Block"
-            }
-          ]
-        }
-      ]
-    }
-  
-  {% endschema %}
+        ]
+      }
+    ]
+  }
+
+{% endschema %}

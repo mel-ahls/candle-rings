@@ -1,16 +1,146 @@
 // put your styles here
 
+// FONTS
+
+{{ settings.font_heading | font_face }};
+{{ settings.font_body | font_face }};
+
+@font-face {
+    font-family: "Josefin Sans";
+    font-weight: 400, 700;
+    font-style: normal;
+    src: url("https://fonts.shopifycdn.com/josefin_sans") format("woff2"),
+         url("https://fonts.shopifycdn.com/josefin_sans/") format("woff");
+}
+
+// VARIABLES
+$primary: #0C0A0A;
+$secondary: #D25100;
+$accent1: #FFE2DF;
+$accent2: #FBE8B1;
+$accent3: #F4BD03;
+
+
+// RESETS 
+
+ul,
+h1,
+h2,
+h3,
+h4,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper {
+    max-width: 1200px;
+    width: 90%;
+    margin: 0 auto;
+}
+
+
+// MAIN STYLES
+
 body {
     background-color: {{ settings.color_main_bg }};
     font-family: {{settings.font_body.family}};
 }
 
-footer {
-    background-color: {{ settings.color_footer_bg }};
+h2 {
+    text-align: center;
+    letter-spacing: 9px;
+}
+
+
+
+// REPEAT STYLES
+
+a {
+    text-decoration: none;
+    text-transform: uppercase;
 }
 
 a:hover {
     color: {{ settings.hover_color }};
 }
+
+
+
+// HEADER 
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 10px 0px;
+}
+
+nav ul {
+    display: flex;
+    padding: 10px;
+    li {
+        list-style: none;
+        a {
+            color: $primary;
+            padding: 18px;
+            
+        }
+    }
+}
+
+
+
+// FEATURED COLLECTION STYLES
+.featured-collection {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    position: relative;
+}
+
+.collection-info {
+    background-repeat: no-repeat;background-position: center; 
+    background-size: 350px;
+    height: 450px;
+
+    text-align: center;
+}
+
+.bkgrd-left, .bkgrd-right {
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    z-index: -1;
+}
+
+.bkgrd-left {
+    background-color: $accent1;
+}
+
+.bkgrd-right {
+    background-color: $accent2;
+    right: 0;
+}
+
+
+
+
+
+// FOOTER
+footer {
+    background-color: {{ settings.color_footer_bg }};
+    text-align: center;
+    p {
+        text-transform: uppercase;
+    }
+}
+
+
 
 // font-family: {{settings.font_heading.family}}

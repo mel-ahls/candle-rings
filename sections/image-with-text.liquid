@@ -12,7 +12,7 @@
   - Button link: link of the button
 {%- endcomment -%}
 
-<section class="image-with-text">
+<section class="image-with-text wrapper">
     {% capture image_layout %}
       <div class="image-with-text__image">
         {% if section.settings.image != blank %}
@@ -35,7 +35,7 @@
         <div>{{ section.settings.text }}</div>
       {% endif %}
       {% if section.settings.button_label != blank and section.settings.button_link != blank %}
-        <a href="{{ section.settings.button_link }}">
+        <a class="btn" href="{{ section.settings.button_link }}">
           {{ section.settings.button_label | escape }}
         </a>
       {% endif %}
