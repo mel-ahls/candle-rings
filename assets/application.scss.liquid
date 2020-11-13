@@ -1,7 +1,6 @@
 // put your styles here
 
 // FONTS
-
 {{ settings.font_heading | font_face }};
 {{ settings.font_body | font_face }};
 
@@ -13,12 +12,15 @@
          url("https://fonts.shopifycdn.com/josefin_sans/") format("woff");
 }
 
+
+
 // VARIABLES
 $primary: #0C0A0A;
 $secondary: #D25100;
 $accent1: #FFE2DF;
 $accent2: #FBE8B1;
 $accent3: #F4BD03;
+
 
 
 // RESETS 
@@ -40,6 +42,7 @@ p {
 }
 
 
+
 // MAIN STYLES
 
 body {
@@ -50,11 +53,12 @@ body {
 h2 {
     text-align: center;
     letter-spacing: 9px;
+    text-transform: uppercase;
 }
 
 
 
-// REPEAT STYLES
+// REPEATED STYLES
 
 a {
     text-decoration: none;
@@ -63,6 +67,24 @@ a {
 
 a:hover {
     color: {{ settings.hover_color }};
+}
+
+.home-collection, .image-with-text {
+    display: flex;
+}
+
+.btn {
+    background-color: $secondary;
+    padding: 5px 9px;
+    color: white;
+    margin-top: 8px;
+    box-shadow: 3px 3px 0px 0px white;
+}
+
+header.btn {
+    background-color: white;
+    color: $primary;
+    box-shadow: 3px 3px 0px 0px $secondary;
 }
 
 
@@ -79,19 +101,19 @@ header {
 
 nav ul {
     display: flex;
-    padding: 10px;
+    padding: 10px 0px 10px 10px;
     li {
         list-style: none;
         a {
             color: $primary;
-            padding: 18px;
+            padding-left: 25px;
             
         }
     }
 }
 
 
-
+// HOME PAGE //
 // FEATURED COLLECTION STYLES
 .featured-collection {
     display: flex;
@@ -102,14 +124,6 @@ nav ul {
 
 .container {
     position: relative;
-}
-
-.collection-info {
-    background-repeat: no-repeat;background-position: center; 
-    background-size: 350px;
-    height: 450px;
-
-    text-align: center;
 }
 
 .bkgrd-left, .bkgrd-right {
@@ -128,7 +142,89 @@ nav ul {
     right: 0;
 }
 
+.collection-info {
+    background-repeat: no-repeat;background-position: center; 
+    background-size: 350px;
+    height: 450px;
 
+    text-align: center;
+}
+
+.collection-info-text {
+    position: relative;
+    top: 75%;
+}
+
+.featured-collection, .home-collection {
+    margin-bottom: 20px;
+}
+
+
+
+// HOME COLLECTIONS
+.home-collection {
+    display: flex;
+}
+
+.home-collection-1, .home-collection-2 {
+    width: calc(100% / 2);
+    height: 240px;
+
+    background-repeat: no-repeat;
+    background-position: center; 
+    background-size: 370px; 
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.home-collection-1 {
+    margin-right: 10px;
+}
+
+.home-collection-2 {
+    margin-left: 10px;
+}
+
+
+
+// IMAGE WITH TEXT 
+.image-with-text {
+    background-color: $accent1;
+    margin-bottom: 20px;
+}
+
+.image-with-text-image, .image-with-text-text {
+    margin: 20px;
+}
+
+.image-with-text-image img {
+    width: 270px;
+}
+
+.image-with-text-text, .image-with-text-text h2 {
+    text-align: left;
+}
+
+.image-with-text-text h2 {
+    font-size: 18px;
+}
+
+.image-with-text-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+
+// SHOP PRODUCTS PAGE
+
+.product-container {
+    width: 25%;
+}
 
 
 
@@ -136,8 +232,18 @@ nav ul {
 footer {
     background-color: {{ settings.color_footer_bg }};
     text-align: center;
+    padding: 30px;
+    img {
+        width: 20%;
+    }
     p {
         text-transform: uppercase;
+        font-size: 12px;
+    }
+    .fab {
+        font-size: 30px;
+        padding: 10px;
+        color: $secondary;
     }
 }
 

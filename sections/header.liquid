@@ -48,7 +48,7 @@
             {% endif %}
         {% endfor %}
     
-         <li><a href="/cart">cart <i class="fas fa-shopping-bag"></i></a></li>
+         <li><a href="/cart">cart <i class="fas fa-shopping-bag"></i>{{ cart.item_count }} ({{ cart.total_price | money}})</a></li>
       </ul>  
     </nav>  
         {% if shop.customer_accounts_enabled %}

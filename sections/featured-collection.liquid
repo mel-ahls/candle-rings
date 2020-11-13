@@ -13,13 +13,15 @@
     <div class="bkgrd-left"></div>
     <div class="bkgrd-right"></div>
     <div class="collection-info" style="background-image: url({{collection.image |img_url: '1000x'}})">
-      {% if section.settings.title != blank %}
-        <h2 class="featured-collection__title">{{ section.settings.title | escape }}</h2>
-      {% endif %}
+      <div class="collection-info-text">
+        {% if section.settings.title != blank %}
+          <h2 class="featured-collection__title">{{ section.settings.title | escape }}</h2>
+        {% endif %}
 
-      {% if section.settings.link != blank %}
-      <a class="btn" href="{{section.settings.link}}">{{section.settings.link_text}}</a>
-      {% endif %}
+        {% if section.settings.link != blank %}
+        <a class="btn" href="{{section.settings.link}}">{{section.settings.link_text}}</a>
+        {% endif %}
+      </div>
     </div>
   </div>
 </section>
