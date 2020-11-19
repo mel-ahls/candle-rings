@@ -1,30 +1,34 @@
-{% assign break_at = 4 %}
+{% assign break_at = 3 %}
 
 {% assign product_id = product.id %}
 
 {% if product.collections %}
+   <div class="related-prod wrapper">
 
-   <h2>{{ section.settings.related_title }}</h2>
-   {% for collection in product.collections %}
-      {% for product in collection.products %}
-         {% unless product.id == product_id %}
-         <figure>
-            <a href="{{product.url}}">
-               <img src="{{ product | img_url: '400x400' }}" alt="{{product.featured_image.alt}}">
-               <figcaption>
-                  <h3>{{product.title}}</h3>
-                  <h4>{{product.price | money}}</h4>
-               </figcaption>
-            </a>
-         </figure>
-         {% endunless %}
-          {% assign counter = counter | plus: 1 %}
-         {% if counter == break_at %}
-            {% break %}
-         {% endif %}
-      {% endfor %}
-   {% endfor %}
-   
+      <h2>{{ section.settings.related_title }}</h2>
+
+      {% for collection in product.collections %}
+         {% for product in collection.products %}
+            {% unless product.id == product_id %}
+               <figure>
+                  <a href="{{product.url}}">
+                     <img src="{{ product | img_url: '400x400' }}" alt="{{product.featured_image.alt}}">
+                     <figcaption>
+                        <h3>{{product.title}}</h3>
+                        <h4>{{product.price | money}}</h4>
+                     </figcaption>
+                  </a>
+               </figure>
+
+            {% endunless %}
+            {% assign counter = counter | plus: 1 %}
+            {% if counter == break_at %}
+               {% break %}
+            {% endif %}
+         {% endfor %}
+      {% endfor %}     
+      
+   </div>
 {% endif %}
 
 {% schema %}

@@ -1,11 +1,12 @@
 <div class="cart-page wrapper">
+
   {% if cart.item_count > 0 %}
     <h1>Cart</h1>
 
     <form action="/cart" method="post" class="cart" novalidate>
       <table>
-
         <thead class="col-names">
+          <th></th>
           <th>Product</th>
           <th>Price</th>
           <th>Qty</th>
@@ -14,13 +15,13 @@
 
         <tbody>
           {% for item in cart.items %}
-            <tr>
-              <td class="prod-img">
+            <tr class="cart-items">
+              <td class="cart-img">
                 <a href="{{ item.url | within: collections.all }}">
                   <img src="{{ item | img_url: 'small' }}" alt="{{ item.title | escape }}">
                 </a>
-                <a href="{{ item.url }}">{{ item.product.title }}</a>
               </td>
+              <td><a href="{{ item.url }}">{{ item.product.title }}</a></td>
               <td>{{ item.price | money }}</td>
               <td>
                 <input type="number" name="updates[]" id="updates_{{ item.key }}" value="{{ item.quantity }}" min="0">
@@ -34,8 +35,8 @@
             </tr>
           {% endfor %}
         </tbody>
-
       </table>
+
       <div class="total">
         <p>sub total : {{ cart.total_price | money }}</p>
         <div class="total-btns">
@@ -44,8 +45,10 @@
         </div>
       </div>
     </form>
+
   {% else %}
     <h2>cart</h2>
     Cart is empty
 {% endif %}
+
 </div>

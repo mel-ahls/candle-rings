@@ -86,12 +86,7 @@ a:hover {
     color: white;
     margin-top: 8px;
     box-shadow: 3px 3px 0px 0px white;
-}
-
-header.btn {
-    background-color: white;
-    color: $primary;
-    box-shadow: 3px 3px 0px 0px $secondary;
+    border: none;
 }
 
 
@@ -117,6 +112,16 @@ nav ul {
             
         }
     }
+}
+
+header.btn {
+    background-color: white;
+    color: $primary;
+    box-shadow: 3px 3px 0px 0px $secondary;
+}
+
+.fa-shopping-bag {
+    padding-right: 4px;
 }
 
 
@@ -235,7 +240,6 @@ nav ul {
 
 
 // SHOP PRODUCTS PAGE
-
 .collections.container, .contact.container, .cart.container {
     height: 250px;
 }
@@ -257,6 +261,78 @@ nav ul {
 .product-container {
     height: 100%;
     width: 100%;
+}
+
+
+// SINGLE PRODUCT PAGE
+.prod-container.wrapper {
+    width: 60%;
+    margin: 80px auto;
+}
+
+.prod-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.prod-info  {
+    margin-left: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    h1 {
+        color: $secondary;
+        text-align: left;
+    }
+    p {
+        font-size: 35px;
+        padding: 20px 0px;
+    }
+}
+
+.prod-info input[type=number] {
+    border: none;
+    background-color: gold;
+    padding: 5px;
+    text-align: center;
+    font-size: 14px;
+    margin-left: 10px;
+}
+
+.prod-info form label, .prod-info form button {
+    text-transform: uppercase;
+}
+
+.prod-info form .btn {
+    padding: 8px 14px;
+    box-shadow: 3px 3px 0px 0px $accent3;
+    font-size: 14px;
+    display: block;
+    margin-top: 40px;
+    &:hover {
+        color: $primary;
+        transition: .3s;
+    }
+}
+
+.related-prod figure {
+    display: inline-block;
+    h3 {
+        color: $primary;
+        padding-bottom: 15px;
+    }
+    h4 {
+        color: $secondary;
+        font-weight: 400;
+    }
+}
+
+.related-prod {
+    text-align: center;
+    margin: 50px auto;
+    h2 {
+        margin-bottom: 45px;
+    }
 }
 
 
@@ -300,11 +376,15 @@ input[type=submit] {
 // CART
 .cart {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     margin: 60px 0px;
 }
 
-.col-names > th {
+table {
+    width: 100%;
+}
+
+.col-names th, .cart-items td {
     text-align: left;
 }
 
@@ -316,14 +396,19 @@ th, td {
     padding: 0px 15px 15px 15px;
 }
 
-.prod-img {
+.cart-img {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.prod-img a {
+.cart-img a {
     padding: 0px;
+}
+
+input[type=number] {
+    min-width: 15%;
+    max-width: 15%;
 }
 
 .remove {
@@ -333,19 +418,32 @@ th, td {
     color: $primary;
     &:hover {
         transition: .2s;
-        color: $secondary;
+        background-color: $secondary;
     }
 }
 
 .total {
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
-    padding: 50px;
+    padding: 30px 0px;
+    p {
+        text-transform: uppercase;
+    }
 }
 
 .total-btns {
-
+    margin-top: 15px;
+    button {
+        background-color: $accent2;
+        border: none;
+        padding: 5px 10px;
+        text-transform: uppercase;
+        margin: 5px;
+        &:hover {
+            border: 1px solid $primary;
+            transition: .2s;
+        }
+    }
 }
 
 
