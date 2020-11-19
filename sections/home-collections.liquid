@@ -1,9 +1,9 @@
 <section>
-  <div class="home-collection wrapper">
+  <div class="home-collection-container wrapper">
     
     {%- assign collection = collections[section.settings.collection_1] -%}
 
-    <div class="home-collection-1" style="background-image: url({{collection.image |img_url: '1400x'}})">
+    <div class="home-collection-1 wrapper" style="background-image: url({{collection.image |img_url: '1400x'}})">
       {% if section.settings.title_1 != blank %}
         <h2 class="home-collection-title">{{ section.settings.title_1 | escape }}</h2>
       {% endif %}
@@ -16,7 +16,7 @@
     
     {%- assign collection = collections[section.settings.collection_2] -%}
 
-    <div class="home-collection-2" style="background-image: url({{collection.image |img_url: '1400x'}})">
+    <div class="home-collection-2 wrapper" style="background-image: url({{collection.image |img_url: '1400x'}})">
       {% if section.settings.title_2 != blank %}
         <h2 class="home-collection-title">{{ section.settings.title_2 | escape }}</h2>
       {% endif %}

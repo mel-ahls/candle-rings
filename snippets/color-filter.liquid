@@ -1,17 +1,19 @@
-{% if collection.all_tags.size > 0 %}
-      <h3>Filter by colour</h3>
-      <ul>
-      <!-- Then loop through the tags and display each -->
-        {% for tag in collection.all_tags %}
-          {% if current_tags contains tag %}
-            <li class="active">
-              {{ tag | link_to_remove_tag: tag }}
-            </li>
-          {% else %}
-            <li>
-              {{ tag | link_to_tag: tag }}
-            </li>
-          {% endif %}
-        {% endfor %}
-      </ul>
-    {% endif %}
+<div class="color-filter">
+  {% if collection.all_tags.size > 0 %}
+    <h3>Filter by colour</h3>
+    <ul>
+    <!-- Then loop through the tags and display each -->
+      {% for tag in collection.all_tags %}
+        {% if current_tags contains tag %}
+          <li class="active">
+            {{ tag | link_to_remove_tag: tag }}
+          </li>
+        {% else %}
+          <li>
+            {{ tag | link_to_tag: tag }}
+          </li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+  {% endif %}
+</div>
