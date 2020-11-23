@@ -13,9 +13,7 @@
   
 <section class="collections-container wrapper">
 
-  <div class="color-filter">
-    {% render 'color-filter' %}
-  </div>
+  {% render 'color-filter' %}
 
   <div class="product-collection">
     <div class="sort">
@@ -25,20 +23,20 @@
       {% paginate collection.products by 9 %}
       <div class="product-container">
         {% for product in collection.products %}
-        <a href="{{ product.url | within: collection }}">
-          <img src="{{ product.featured_image.src | img_url: 'large' }}" alt="{{ product.featured_image.alt | escape }}">
-        </a>
-        {% unless product.available %}<br><strong>sold out</strong>{% endunless %}
-        <h3>{{ product.title }}</h3>
-        <p>{{ product.price | money }}</p>
-        </a>
+        <div class="single-info">
+          <a href="{{ product.url | within: collection }}">
+            <img src="{{ product.featured_image.src | img_url: 'medium' }}" alt="{{ product.featured_image.alt | escape }}">
+          </a>
+          {% unless product.available %}<br><strong>sold out</strong>{% endunless %}
+          <h3>{{ product.title }}</h3>
+          <p>{{ product.price | money }}</p>
+        </div>
+        {% else %}
       </div>
-    </div>
-      
 
-    {% else %}
       <p>no matches</p>
-    {% endfor %}
+      {% endfor %}
+    </div>
 
     <div class="page-counter">
       {% if paginate.pages > 1 %}

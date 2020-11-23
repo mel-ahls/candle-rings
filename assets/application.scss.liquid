@@ -35,6 +35,11 @@ p {
   padding: 0;
 }
 
+img {
+    width: 100%;
+    display: block;
+}
+
 .wrapper {
     max-width: 1200px;
     width: 90%;
@@ -73,7 +78,8 @@ a {
 }
 
 a:hover {
-    color: {{ settings.hover_color }};
+    background-color: #d25100c7;
+    transition: .3s;
 }
 
 .home-collection, .image-with-text {
@@ -82,11 +88,12 @@ a:hover {
 
 .btn {
     background-color: $secondary;
-    padding: 5px 9px;
+    padding: 14px;
     color: white;
     margin-top: 8px;
-    box-shadow: 3px 3px 0px 0px white;
     border: none;
+    border-radius: 6px;
+    font-size: 14px;
 }
 
 
@@ -101,7 +108,7 @@ header {
     padding: 10px 0px;
 }
 
-nav ul {
+header nav ul {
     display: flex;
     padding: 10px 0px 10px 10px;
     li {
@@ -109,7 +116,11 @@ nav ul {
         a {
             color: $primary;
             padding-left: 25px;
-            
+        }
+
+        &:hover {
+            font-weight: bold;
+            transition: .3s;
         }
     }
 }
@@ -185,7 +196,7 @@ header.btn {
 .home-collection-1, .home-collection-2 {
     background-repeat: no-repeat;
     background-position: center; 
-    width: 510px;
+    width: 50%;
     height: 350px;
 
     display: flex;
@@ -254,13 +265,83 @@ header.btn {
     }
 }
 
+.collections-title {
+    margin-bottom: 45px;
+}
+
 .collections-container {
     display: flex;
 }
 
+.color-filter {
+    width: 15%;
+}
+
+.color-filter li {
+    list-style: none;
+    a {
+        color: $primary;
+    }
+}
+
+.color-filter h3 {
+    width: 50%;
+    margin-bottom: 10px;
+}
+
+.product-collection {
+    width: 85%;
+}
+
 .product-container {
-    height: 100%;
-    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.single-info {
+    margin: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    h3 {
+        font-weight: 400;
+        margin-top: 20px;
+    }
+    p {
+        color: $secondary;
+    }
+}
+
+.sort-by {
+    margin-bottom: 25px;
+}
+
+.sort-by select {
+    border: none;
+    background: $accent3;
+    padding: 8px 12px;
+}
+
+.page-counter {
+    text-align: center;
+    margin: 30px;
+    span {
+        background-color: $primary;
+        padding: 4px 8px;
+        cursor: pointer;
+    }
+    
+    span, span a {
+        color: $accent2;
+    }
+}
+
+.page-counter span:hover, .page-counter span a:hover {
+    background-color: $accent3;
+    color: $primary;
+    transition: .3s;
 }
 
 

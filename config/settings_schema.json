@@ -42,12 +42,6 @@
         {
            "type": "header",
            "content": "Hover Color"
-        },       
-        {
-           "type": "color",
-           "id": "hover_color",
-           "label": "Link Hover Color",
-           "default": "#161d25"
         }
      ]
   },
