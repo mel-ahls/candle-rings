@@ -35,6 +35,8 @@
   {% endif %}
     
     <nav>
+      <li class="mobile-cart"><a href="/cart">cart <i class="fas fa-shopping-bag"></i>{{ cart.item_count }} ({{ cart.total_price | money}})</a></li>
+      <div class="burg"><i class="fas fa-bars"></i></div>
       <ul>
         {% for link in linklists.main-menu.links %}
             {% assign child_list_handle = link.title | handleize %}
@@ -48,9 +50,9 @@
             {% endif %}
         {% endfor %}
     
-         <li><a href="/cart">cart <i class="fas fa-shopping-bag"></i>{{ cart.item_count }} ({{ cart.total_price | money}})</a></li>
-      </ul>  
-    </nav>  
+         <li class="desktop-cart"><a href="/cart">cart <i class="fas fa-shopping-bag"></i>{{ cart.item_count }} ({{ cart.total_price | money}})</a></li>
+      </ul>
+    </nav>
         {% if shop.customer_accounts_enabled %}
             {% if customer %}
             <a href="/account">account</a>
