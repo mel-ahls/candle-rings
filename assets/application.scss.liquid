@@ -622,14 +622,22 @@ footer {
     header nav ul {
         display: none;
         flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
         background: white;
+        padding: 35px;
+
         z-index: 1;
-        position: fixed;
+        position: absolute;
         right: 0;
-        top: 15px;
-        padding: 20px;
+        top: 68px;
+        height: 50%;
+        width: 90%;
         li {
-            padding: 8px 0px;
+            padding: 35px 0px;
+            font-size: 30px;
+
             a {
                 padding-left: 0px;
             }
@@ -638,6 +646,15 @@ footer {
 
     .burg {
         font-size: 24px;
+        margin-left: 10px;
+    }
+
+    .mobile-cart a {
+        color: $primary;
+    }
+
+    .clicked {
+        display: flex;
     }
 }
 

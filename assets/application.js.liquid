@@ -1,5 +1,7 @@
 // Put your application javascript here
 
-$(function() {
-    console.log('js loaded');
-});
+$(document).ready(function(){
+    $(".burg").click(function(){
+      $("nav ul").toggleClass("clicked");
+    });
+  });

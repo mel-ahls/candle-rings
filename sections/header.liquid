@@ -35,7 +35,7 @@
   {% endif %}
     
     <nav>
-      <li class="mobile-cart"><a href="/cart">cart <i class="fas fa-shopping-bag"></i>{{ cart.item_count }} ({{ cart.total_price | money}})</a></li>
+      <li class="mobile-cart"><a href="/cart"> <i class="fas fa-shopping-bag"></i>{{ cart.item_count }} ({{ cart.total_price | money}})</a></li>
       <div class="burg"><i class="fas fa-bars"></i></div>
       <ul>
         {% for link in linklists.main-menu.links %}
@@ -50,7 +50,7 @@
             {% endif %}
         {% endfor %}
     
-         <li class="desktop-cart"><a href="/cart">cart <i class="fas fa-shopping-bag"></i>{{ cart.item_count }} ({{ cart.total_price | money}})</a></li>
+         <li class="desktop-cart"><a href="/cart"> <i class="fas fa-shopping-bag"></i>{{ cart.item_count }} ({{ cart.total_price | money}})</a></li>
       </ul>
     </nav>
         {% if shop.customer_accounts_enabled %}
