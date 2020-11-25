@@ -37,6 +37,7 @@ p {
 
 img {
     width: 100%;
+    min-width: 20px;
     display: block;
 }
 
@@ -351,18 +352,17 @@ header.btn {
 // select credit: https://codepen.io/vkjgr/pen/VYMeXp
 
 
-
 .page-counter {
     text-align: center;
     margin: 30px;
     span {
-        background-color: $primary;
+        background-color: $accent2;
         padding: 4px 8px;
         cursor: pointer;
     }
     
     span, span a {
-        color: $accent2;
+        color: $primary;
     }
 }
 
@@ -401,7 +401,7 @@ header.btn {
 
 .prod-info input[type=number] {
     border: none;
-    background-color: gold;
+    background-color: $accent2;
     padding: 5px;
     text-align: center;
     font-size: 14px;
@@ -424,10 +424,15 @@ header.btn {
     }
 }
 
+.prod-info form select {
+    display: none;
+}
+
 .related-prod figure {
     display: inline-block;
     h3 {
         color: $primary;
+        padding-top: 22px;
         padding-bottom: 15px;
     }
     h4 {
@@ -495,14 +500,15 @@ table {
 
 .col-names th, .cart-items td {
     text-align: left;
+    // width: 100px;
+}
+
+.resize {
+    width: 90px;
 }
 
 .cart td, .cart a {
     color: $primary;
-}
-
-th, td {
-    padding: 0px 15px 15px 15px;
 }
 
 .cart-img {
@@ -516,8 +522,8 @@ th, td {
 }
 
 input[type=number] {
-    min-width: 15%;
-    max-width: 15%;
+    min-width: 30px;
+    max-width: 30px;
 }
 
 .remove {
@@ -543,14 +549,15 @@ input[type=number] {
 .total-btns {
     margin-top: 15px;
     button {
-        background-color: $accent2;
+        background-color: $secondary;
+        color: white;
         border: none;
-        padding: 5px 10px;
+        padding: 8px 12px;
         text-transform: uppercase;
         margin: 5px;
         &:hover {
-            border: 1px solid $primary;
-            transition: .2s;
+            background-color: #d25100b3;
+            transition: .3s;
         }
     }
 }
@@ -605,6 +612,9 @@ footer {
         }
     }
 
+    .about-us-image img {
+        width: 250px;
+    }
 }
 
 
@@ -656,6 +666,28 @@ footer {
     .clicked {
         display: flex;
     }
+
+    // HOME PAGE COLLECTIONS 
+    .home-collection-container {
+        flex-direction: column;
+    }
+
+    .home-collection-1, .home-collection-2 {
+        width: 100%;
+        height: 250px;
+    }
+
+    .home-collection-1 {
+        margin-bottom: 20px;
+        margin-right: 0;
+    }
+
+    .home-collection-2 {
+        margin-left: 0;
+    }
+
+    // HOME - ABOUT US SECTION
+
 }
 
 
