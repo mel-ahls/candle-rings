@@ -37,7 +37,7 @@ p {
 
 img {
     width: 100%;
-    min-width: 20px;
+    min-width: 100px;
     display: block;
 }
 
@@ -210,11 +210,12 @@ header.btn {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    h2 {
+        min-width: 90%;
+        max-width: 50%; 
+    }
 }
 
-.home-collection-1 h2, .home-collection-2 h2 {
-    width: 50%;
-}
 
 .home-collection-1 {
     margin-right: 10px;
@@ -258,15 +259,12 @@ header.btn {
 
 
 // SHOP PRODUCTS PAGE
-.collections.container, .contact.container, .cart.container {
-    height: 250px;
-}
 
 .title {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100%;
+    padding: 50px 0;
     h1 {
         text-transform: uppercase;
     }
@@ -284,7 +282,10 @@ header.btn {
     width: 12%;
     height: 15%;
     margin-right: 3%;
-    border-right: 2px solid $accent3
+    border-right: 2px solid $accent3;
+    ul {
+        padding-right: 10px;
+    }
 }
 
 .color-filter li {
@@ -298,10 +299,6 @@ header.btn {
     margin-bottom: 10px;
 }
 
-.product-collection {
-    width: 85%;
-}
-
 .product-container {
     display: flex;
     flex-wrap: wrap;
@@ -310,8 +307,8 @@ header.btn {
 
 .single-info {
     text-align: center;
-    width: calc(30% - 40px);
-    margin: 20px;
+    width: 30%;
+    margin: 20px 8px;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -486,12 +483,19 @@ input[type=submit] {
     text-transform: uppercase;
 }
 
+.form-map iframe {
+    max-width: 100%;
+}
+
 
 // CART
 .cart {
     display: flex;
     flex-direction: column;
     margin: 60px 0px;
+    h1 {
+        margin-top: 30px;
+    }
 }
 
 table {
@@ -668,6 +672,7 @@ footer {
     }
 
     // HOME PAGE COLLECTIONS 
+
     .home-collection-container {
         flex-direction: column;
     }
@@ -687,7 +692,22 @@ footer {
     }
 
     // HOME - ABOUT US SECTION
+    .about-us {
+        flex-direction: column;
+    }
 
+    .about-us-image img {
+        width: 100%;
+    }
+
+    // SHOP PRODUCTS PAGE
+    collections-container {
+        flex-direction: column;
+    }
+
+    .color-filter {
+        display: none;
+    }
 }
 
 
@@ -696,5 +716,13 @@ footer {
 @media (max-width: 480px) {
     .contact-form {
         width: 90%;
+    }
+
+    .mobile-cart {
+        display: none;
+    }
+
+    .desktop-cart {
+        display: flex;
     }
 }
